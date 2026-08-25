@@ -32,8 +32,29 @@ The goal is to provide non-technical stakeholders with an easy-to-use tool to id
 1. **Business Understanding:** The primary objective is to identify customers at a high risk of churning so the business can proactively offer retention incentives. The solution focuses on both accurate prediction and clear interpretability (understanding *why* a customer might leave).
 2. **Data Cleaning:** Handled missing values (e.g., blank strings in `TotalCharges` were converted to 0) and formatted data types correctly.
 3. **Feature Engineering:** Derived new features such as `tenure_group` and `avg_charge_per_month`. Applied one-hot encoding to categorical variables and standard scaling to numeric variables.
-4. **Model Selection & Evaluation:** Trained and compared Logistic Regression and XGBoost classifiers. Evaluated their performance using ROC-AUC, Precision, Recall, and F1-Score to properly account for class imbalance. The Logistic Regression model was chosen for its superior ROC-AUC score (0.8432) and its easily interpretable coefficients.
-5. **Model Deployment:** Exported the final Logistic Regression model alongside the fitted scaler to be served dynamically via an interactive Streamlit web application.
+## Modeling Approach
+
+### Class-Imbalance Handling
+* **Stratified Splitting:** Maintained the same proportion of churned vs. retained customers in both train and test sets to ensure representative evaluation.
+* **Metric Selection:** Relied on Precision, Recall, F1-Score, and ROC-AUC rather than raw accuracy to account for the imbalanced nature of the churn dataset.
+
+### Model Pipelines
+* **Traditional Models:** Logistic Regression
+* **Gradient Boosting:** XGBoost Classifier
+
+### Evaluation Metrics
+* Evaluated models primarily on ROC-AUC, Precision, and Recall on a 20% hold-out test set.
+
+## Key Results
+
+| Model | ROC-AUC | Precision | Recall | F1-Score |
+|---|---|---|---|---|
+| **Logistic Regression** | 0.843 | 0.657 | 0.516 | 0.578 |
+| **XGBoost** | 0.822 | 0.597 | 0.500 | 0.544 |
+
+### Model Comparison
+* **Logistic Regression** offered the best performance across all metrics and provided excellent interpretability via feature coefficients.
+* **XGBoost** showed decent performance but underperformed the linear baseline while decreasing interpretability.
 
 ## The Tech Stack
 - **Data Manipulation:** `pandas`, `numpy`
