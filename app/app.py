@@ -52,7 +52,7 @@ def preprocess_input(df):
         
     return df
 
-st.title("Telco Customer Churn Prediction Dashboard")
+st.title("Customer Churn Prediction Dashboard")
 
 st.markdown("""
 This dashboard predicts customer churn based on our trained machine learning model.

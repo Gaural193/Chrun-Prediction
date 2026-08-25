@@ -1,4 +1,4 @@
-# Telco Customer Churn Prediction Dashboard
+# Customer Churn Prediction Dashboard
 
 This project is an end-to-end machine learning system that predicts customer churn. It takes historical customer data, cleans it, trains a classification model, and serves predictions through an interactive Streamlit dashboard. 
 
