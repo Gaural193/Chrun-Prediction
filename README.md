@@ -17,8 +17,6 @@ The goal is to provide non-technical stakeholders with an easy-to-use tool to id
 
 ## Screenshots
 
-*(Add your screenshots below!)*
-
 ### 1. Single Customer Prediction
 ![Single Customer Prediction](screenshot_single_customer.png)
 
