@@ -29,10 +29,11 @@ The goal is to provide non-technical stakeholders with an easy-to-use tool to id
 ![Churn Drivers](notebooks/feature_importance.png)
 
 ## Methodology
-1. **Data Cleaning:** Handled missing values (e.g., blank strings in `TotalCharges` were converted to 0) and formatted data types correctly.
-2. **Feature Engineering:** Derived new features such as `tenure_group` and `avg_charge_per_month`. Applied one-hot encoding to categorical variables and standard scaling to numeric variables.
-3. **Model Selection:** Trained and compared Logistic Regression and XGBoost classifiers. Evaluated performance using ROC-AUC, Precision, Recall, and F1-Score to appropriately handle the slight class imbalance.
-4. **Model Deployment:** Selected the Logistic Regression model (highest ROC-AUC of 0.8432) and exported it alongside the fitted scaler to be served dynamically via a Streamlit web application.
+1. **Business Understanding:** The primary objective is to identify customers at a high risk of churning so the business can proactively offer retention incentives. The solution focuses on both accurate prediction and clear interpretability (understanding *why* a customer might leave).
+2. **Data Cleaning:** Handled missing values (e.g., blank strings in `TotalCharges` were converted to 0) and formatted data types correctly.
+3. **Feature Engineering:** Derived new features such as `tenure_group` and `avg_charge_per_month`. Applied one-hot encoding to categorical variables and standard scaling to numeric variables.
+4. **Model Selection & Evaluation:** Trained and compared Logistic Regression and XGBoost classifiers. Evaluated their performance using ROC-AUC, Precision, Recall, and F1-Score to properly account for class imbalance. The Logistic Regression model was chosen for its superior ROC-AUC score (0.8432) and its easily interpretable coefficients.
+5. **Model Deployment:** Exported the final Logistic Regression model alongside the fitted scaler to be served dynamically via an interactive Streamlit web application.
 
 ## The Tech Stack
 - **Data Manipulation:** `pandas`, `numpy`
