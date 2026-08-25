@@ -40,6 +40,14 @@ This project follows the Cross-Industry Standard Process for Data Mining (CRISP-
    - Analyzed the Telco Customer Churn dataset (~7,000 records)
    - Evaluated 21 available variables (demographics, account info, services)
    - Explored class imbalance (roughly 27% churn rate)
+   
+   **Exploratory Data Analysis Highlights:**
+   
+   *Churn by Contract Type*
+   ![Churn by Contract](notebooks/churn_by_contract.png)
+   
+   *Churn by Tenure*
+   ![Churn by Tenure](notebooks/churn_by_tenure.png)
 
 3. **Data Preparation**
    - Cleaned missing/blank values in `TotalCharges` by converting them to numeric
@@ -84,6 +92,14 @@ This project follows the Cross-Industry Standard Process for Data Mining (CRISP-
 ### Model Comparison
 * **Logistic Regression** offered the best performance across all metrics and provided excellent interpretability via feature coefficients.
 * **XGBoost** showed decent performance but underperformed the linear baseline while decreasing interpretability.
+
+### Model Evaluation Charts
+
+**Confusion Matrix (Logistic Regression)**  
+![Confusion Matrix](notebooks/best_model_confusion_matrix.png)
+
+**ROC Curve (Logistic Regression)**  
+![ROC Curve](notebooks/best_model_roc_curve.png)
 
 ## Requirements
 
