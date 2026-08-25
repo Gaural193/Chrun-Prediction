@@ -15,7 +15,6 @@ The goal is to provide non-technical stakeholders with an easy-to-use tool to id
   - `interpret_model.py`: Extracts and visualizes the top factors driving churn.
 - `app/`: Contains the Streamlit dashboard (`app.py`) and the exported machine learning models (`model.joblib`, `scaler.joblib`, `features.joblib`).
 
-## Screenshots
 
 ### 1. Single Customer Prediction
 ![Single Customer Prediction](screenshot_single_customer.png)
