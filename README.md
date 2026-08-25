@@ -85,11 +85,17 @@ This project follows the Cross-Industry Standard Process for Data Mining (CRISP-
 * **Logistic Regression** offered the best performance across all metrics and provided excellent interpretability via feature coefficients.
 * **XGBoost** showed decent performance but underperformed the linear baseline while decreasing interpretability.
 
-## The Tech Stack
-- **Data Manipulation:** `pandas`, `numpy`
-- **Machine Learning:** `scikit-learn` (Logistic Regression, Data Scaling), `xgboost`
-- **Visualizations:** `matplotlib`, `seaborn`
-- **Dashboard:** `streamlit`
+## Requirements
+
+* Python 3.10+
+* pandas
+* numpy
+* scikit-learn
+* xgboost
+* streamlit
+* matplotlib
+* seaborn
+* joblib
 
 ## Key Insights
 Based on our Logistic Regression model, the top factors that influence whether a customer will churn are:
@@ -109,3 +115,9 @@ Based on our Logistic Regression model, the top factors that influence whether a
    ```bash
    streamlit run app/app.py
    ```
+
+## References
+
+* IBM / Kaggle. "Telco Customer Churn". Kaggle. https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+* P. Chapman, J. Clinton, R. Kerber, T. Khabaza, T. Reinartz, C. Shearer, and R. Wirth. 2000. "CRISP-DM 1.0: Step-by-step data mining guide". SPSS Inc.
+* F. Pedregosa et al. 2011. "Scikit-learn: Machine Learning in Python". JMLR 12, pp. 2825-2830.
