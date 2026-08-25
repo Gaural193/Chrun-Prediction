@@ -28,6 +28,12 @@ The goal is to provide non-technical stakeholders with an easy-to-use tool to id
 ### 3. Key Churn Drivers
 ![Churn Drivers](notebooks/feature_importance.png)
 
+## Methodology
+1. **Data Cleaning:** Handled missing values (e.g., blank strings in `TotalCharges` were converted to 0) and formatted data types correctly.
+2. **Feature Engineering:** Derived new features such as `tenure_group` and `avg_charge_per_month`. Applied one-hot encoding to categorical variables and standard scaling to numeric variables.
+3. **Model Selection:** Trained and compared Logistic Regression and XGBoost classifiers. Evaluated performance using ROC-AUC, Precision, Recall, and F1-Score to appropriately handle the slight class imbalance.
+4. **Model Deployment:** Selected the Logistic Regression model (highest ROC-AUC of 0.8432) and exported it alongside the fitted scaler to be served dynamically via a Streamlit web application.
+
 ## The Tech Stack
 - **Data Manipulation:** `pandas`, `numpy`
 - **Machine Learning:** `scikit-learn` (Logistic Regression, Data Scaling), `xgboost`
