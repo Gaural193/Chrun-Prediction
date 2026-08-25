@@ -28,10 +28,39 @@ The goal is to provide non-technical stakeholders with an easy-to-use tool to id
 ### 3. Key Churn Drivers
 ![Churn Drivers](notebooks/feature_importance.png)
 
-## Methodology
-1. **Business Understanding:** The primary objective is to identify customers at a high risk of churning so the business can proactively offer retention incentives. The solution focuses on both accurate prediction and clear interpretability (understanding *why* a customer might leave).
-2. **Data Cleaning:** Handled missing values (e.g., blank strings in `TotalCharges` were converted to 0) and formatted data types correctly.
-3. **Feature Engineering:** Derived new features such as `tenure_group` and `avg_charge_per_month`. Applied one-hot encoding to categorical variables and standard scaling to numeric variables.
+## CRISP-DM Methodology
+
+This project follows the Cross-Industry Standard Process for Data Mining (CRISP-DM):
+
+1. **Business Understanding**
+   - Identified the need for early detection of customer churn
+   - Defined objectives: create interpretable, highly accurate models for proactive retention
+
+2. **Data Understanding**
+   - Analyzed the Telco Customer Churn dataset (~7,000 records)
+   - Evaluated 21 available variables (demographics, account info, services)
+   - Explored class imbalance (roughly 27% churn rate)
+
+3. **Data Preparation**
+   - Cleaned missing/blank values in `TotalCharges` by converting them to numeric
+   - Engineered new features such as `tenure_group` and `avg_charge_per_month`
+   - One-hot encoded categorical features and standardized numeric features
+   - Performed stratified train-test splitting to preserve class distributions
+
+4. **Modeling**
+   - Implemented multiple modeling pipelines (Logistic Regression and XGBoost)
+   - Addressed class imbalance through metric selection (ROC-AUC instead of raw accuracy)
+   - Selected Logistic Regression as the final model due to superior performance and interpretability
+
+5. **Evaluation**
+   - Evaluated models using ROC-AUC, precision, recall, and F1-score
+   - Analyzed feature importance through logistic coefficients
+   - Validated final performance on a 20% held-out test set
+
+6. **Deployment**
+   - Developed a Streamlit application for interactive churn risk assessment
+   - Built a dual-input UI for single-customer forms and batch CSV uploads
+   - Created interpretable risk outputs (Low/Medium/High) and driver visualizations for non-technical users
 ## Modeling Approach
 
 ### Class-Imbalance Handling
